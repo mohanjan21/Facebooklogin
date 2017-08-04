@@ -26,7 +26,7 @@ public class LoginPage {
 	private WebElement btnMale;
 	@FindBy(id="u_0_m")
 	private WebElement btnSignup;
-	@FindBy(xpath = "//*[text()='Home']")
+	@FindBy(xpath="//*[@class='fb_logo img sp_rW5X-e3rGx4 sx_125eb1']")
 	private WebElement imgHomePageLogo;
 	public WebElement getImgHomePageLogo() {
 		return imgHomePageLogo;

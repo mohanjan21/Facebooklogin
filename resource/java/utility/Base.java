@@ -38,7 +38,7 @@ public class Base {
 	static WebDriverWait wait;
 	static File f1 = new File("./JSON/Configuration.json");
 
-	public static WebDriver getDriver() {
+	public WebDriver getDriver() {
 		JSONObject jsonObject = JSONReadFromFile();
 		String browser = (String) jsonObject.get("browser");
 
@@ -129,7 +129,7 @@ public class Base {
 		return res;
 	}
 
-	public static void setText(WebElement element, String name) {
+	public void setText(WebElement element, String name) {
 		if (name != null && elementFound(element)) {
 			element.clear();
 			element.sendKeys(name);
@@ -146,7 +146,7 @@ public class Base {
 
 	}
 
-	public static void clickBtn(WebElement element) {
+	public void clickBtn(WebElement element) {
 		if (elementFound(element)) {
 			element.click();
 		}
@@ -174,7 +174,7 @@ public class Base {
 				e.printStackTrace();
 		}
 		}
-	public static void getScreenShot(String screenShotFileName) {
+	public void getScreenShot(String screenShotFileName) {
 		File screenShotLocation = new File("./screenshot/" + screenShotFileName
 				+ ".png");
 		TakesScreenshot screenshot = (TakesScreenshot) driver;
@@ -214,7 +214,7 @@ public class Base {
 
 	}
 
-	public static List<HashMap<String, String>> readValueFromExcelSheet() {
+	public List<HashMap<String, String>> readValueFromExcelSheet() {
 		List<HashMap<String, String>> mapDatasList = new ArrayList();
 		try {
 			File excelLocaltion = new File("./Excel/Facebook.xlsx");
